@@ -1,0 +1,55 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .title {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 20px 0;
+  }
+
+  .route {
+    border: 1px solid #dcdcdc;
+    width: 80%;
+    display: flex;
+    margin-bottom: 20px;
+    overflow-x: scroll;
+
+    .route-name {
+      height: 60px;
+      display: flex;
+      align-items: center;
+      margin: 0 20px;
+      font-size: 20px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #dcdcdc;
+      }
+    }
+    .active {
+      color: #8b5cf6;
+    }
+  }
+
+  .content {
+    position: relative;
+    width: 80%;
+    height: 700px;
+    overflow: hidden;
+    border: 1px solid #dcdcdc;
+
+    &-item {
+      position: absolute;
+      width: 100%;
+      height: 96%;
+      top: 20px;
+      background-color: #fff;
+    }
+  }
+
+  .zIndex {
+    z-index: 10;
+  }
+}

@@ -1,3 +1,46 @@
 {
-  "liveServer.settings.port": 5501
+  "liveServer.settings.port": 5501,
+  "editor.tabSize": 2,
+  "prettier.semi": false,
+  "eslint.enable": true,
+  "eslint.run": "onType",
+  "eslint.probe": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // 每次保存自动格式化
+  "editor.formatOnSave": true,
+  // 每次保存的时候将代码按eslint格式进行修复
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "javascript.format.insertSpaceBeforeFunctionParenthesis": true, // 函数前加上空格 只有在默认vetur的时候生效
+  // js文件默认格式化方式 和vue中的js保持一致使用编辑器自带的ts格式
+  "[javascript]": {
+    // "editor.defaultFormatter": "vscode.typescript-language-features"
+    // javascript文件默认格式化方式prettier
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // json文件默认格式化方式prettier
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // css文件默认格式化方式prettier
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // typescript文件默认格式化方式prettier
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // 控制折行方式 - "on" (根据视区宽度折行)
+  "editor.wordWrap": "on",
+  "editor.colorDecorators": false, // 控制编辑器是否显示内联颜色修饰器和颜色选取器。
+  "editor.snippetSuggestions": "top", // 将建议的代码段优先级提前选择，比如输入for第一个提示是for循环代码段。
+  "files.autoSave": "onFocusChange",
+  "editor.formatOnPaste": true,
+  "window.zoomLevel": 1
 }

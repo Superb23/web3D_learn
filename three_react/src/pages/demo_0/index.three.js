@@ -25,7 +25,7 @@ camera.lookAt(0, 0, 0)
 const renderer = new THREE.WebGLRenderer()
 renderer.setSize(width, height)
 renderer.render(scene, camera)
-document.body.appendChild(renderer.domElement) // canvas画布
+document.getElementById("demo_0")?.appendChild(renderer.domElement) // canvas画布
 
 // 设置相机控件轨道控制器
 const controls = new OrbitControls(camera, renderer.domElement)
