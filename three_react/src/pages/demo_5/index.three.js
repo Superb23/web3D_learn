@@ -3,12 +3,6 @@ import { GUI } from "three/examples/jsm/libs/lil-gui.module.min.js"
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
 import Stats from "three/examples/jsm/libs/stats.module.js"
 
-const gui = new GUI()
-gui.domElement.style.right = "0px"
-const guiControl = {
-  isRolate: false,
-}
-
 const scene = new THREE.Scene()
 
 // 球
@@ -83,8 +77,19 @@ document.getElementById("demo_5")?.appendChild(renderer.domElement)
 const stats = Stats()
 document.getElementById("demo_5")?.appendChild(stats.dom)
 
+// gui
+const gui = new GUI()
+gui.domElement.style.right = "10px"
+const guiControl = {
+  isRolate: false,
+}
+// 菜单
+const materialGui = gui.addFolder("材质")
+const lightGui = gui.addFolder("光源").close()
+const positionGui = gui.addFolder("位置").close()
+
 // 渲染循环
-const clock = new THREE.Clock()
+// const clock = new THREE.Clock()
 function render() {
   stats.update() // 刷新帧率
   guiControl.isRolate && cube.rotateY(0.01)
@@ -99,21 +104,22 @@ controls.addEventListener("change", function () {
   renderer.render(scene, camera)
 })
 
-// window.onresize = function () {
-//   camera.aspect = width / height
-//   camera.updateProjectionMatrix()
-//   renderer.setSize(width, height)
-//   // renderer.render(scene, camera)
-// }
+window.onresize = function () {
+  camera.aspect = width / height
+  camera.updateProjectionMatrix()
+  renderer.setSize(width, height)
+}
 
-gui
+lightGui
   .add(directionalLight, "intensity", 0, 2)
   .name("平行光强度")
   .onChange(function () {
     renderer.render(scene, camera)
   })
-gui.add(ambientLight, "intensity", 0, 1).name("环境光强度")
-gui.add(cube.position, "x", [-100, 0, 100]).name("x坐标")
-// gui.add(cube.position, "y", -500, 500)
-// gui.add(cube.position, "z", -500, 500)
-gui.add(guiControl, "isRolate").name("是否旋转")
+lightGui.add(ambientLight, "intensity", 0, 1).name("环境光强度")
+
+materialGui.add(cube.position, "x", [-100, 0, 100]).name("x坐标")
+materialGui.add(cube.position, "y", -500, 500).name("y坐标")
+materialGui.add(cube.position, "z", -500, 500).name("z坐标")
+
+positionGui.add(guiControl, "isRolate").name("是否旋转")
