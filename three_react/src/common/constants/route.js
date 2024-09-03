@@ -4,6 +4,7 @@ import { Demo2 } from "@/pages/demo_2"
 import { Demo3 } from "@/pages/demo_3"
 import { Demo4 } from "@/pages/demo_4"
 import { Demo5 } from "@/pages/demo_5"
+import { Demo6 } from "@/pages/demo_6"
 
 export const ROUTES = [
   {
@@ -33,5 +34,9 @@ export const ROUTES = [
   {
     name: "demo_5",
     element: <Demo5 />,
+  },
+  {
+    name: "demo_6",
+    element: <Demo6 />,
   },
 ]
