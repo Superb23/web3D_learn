@@ -78,7 +78,7 @@ const stats = Stats()
 document.getElementById("demo_5")?.appendChild(stats.dom)
 
 // gui
-const gui = new GUI()
+const gui = new GUI().close()
 gui.domElement.style.right = "10px"
 const guiControl = {
   isRolate: false,
