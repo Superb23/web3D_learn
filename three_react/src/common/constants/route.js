@@ -10,6 +10,7 @@ import { Demo8 } from "@/pages/demo_8"
 import { Demo9 } from "@/pages/demo_9"
 import { Demo10 } from "@/pages/demo_10"
 import { Demo11 } from "@/pages/demo_11"
+import { Demo12 } from "@/pages/demo_12"
 
 export const ROUTES = [
   {
@@ -17,7 +18,11 @@ export const ROUTES = [
     element: <div>home</div>,
   },
   {
-    name: "11.自定义几何体",
+    name: "12.几何体组",
+    element: <Demo12 />,
+  },
+  {
+    name: "11.几何体clone+copy",
     element: <Demo11 />,
   },
   {
