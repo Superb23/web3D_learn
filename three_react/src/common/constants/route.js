@@ -11,11 +11,16 @@ import { Demo9 } from "@/pages/demo_9"
 import { Demo10 } from "@/pages/demo_10"
 import { Demo11 } from "@/pages/demo_11"
 import { Demo12 } from "@/pages/demo_12"
+import { Demo13 } from "@/pages/demo_13"
 
 export const ROUTES = [
   {
     name: "home",
     element: <div>home</div>,
+  },
+  {
+    name: "13.多组排布",
+    element: <Demo13 />,
   },
   {
     name: "12.几何体组",
